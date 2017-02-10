@@ -1,0 +1,58 @@
+# Radiosity Tests
+# ---------------
+
+#=========================================================================
+# Options
+#-------------------------------------------------------------------------
+# In the below commands, customize with following options (shown =default)
+
+    -iters=1            --- Number of iterations of solver
+    -smoothcolor=false  --- Apply smoothing of patch colors
+    -solver=0 (0 - Gauss-Seidel; 1 - Progressive)
+    
+Other options that are allowed but not recommended:
+                                   ---------------
+    -nparts=1
+    -ncontour=4
+    -occlusion=false
+    -scene=1
+    -loadFF=false
+    -FFfile=c:/smd/temp/FF.csv
+#==========================================================================
+
+# Scene 1 - save form factors
+Debug\assignments.exe -tc 6 -scene 1 -e 0,0,-50 -at 0,0,-150 -nparts 5 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion -FFfile c:/smd/temp/FF-scene1_nparts5_ncontour4.csv
+
+# Scene 1 - pre-computed form factors
+Debug\assignments.exe -tc 6 -scene 1 -e 0,0,-50 -at 0,0,-150 -nparts 5 -ncontour 4 -ambient 1 -intensity 1.5 -occlusion -loadFF -FFfile c:/smd/temp/FF-scene1_nparts5_ncontour4.csv -solver 0 -iters 1
+
+# Scene 2 - save form factors
+Debug\assignments.exe -tc 6 -scene 2 -e 0,0,-150 -at 0,0,0 -nparts 6 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion -FFfile "c:/smd/temp/FF-scene2_nparts6_ncountour4.csv"
+
+# Scene 2 - pre-computed form factors
+Debug\assignments.exe -tc 6 -scene 2 -e 0,0,-150 -at 0,0,0 -nparts 6 -ncontour 4 -ambient 1 -intensity 1.5 -occlusion -loadFF -FFfile "c:/smd/temp/FF-scene2_nparts6_ncountour4.csv" -solver 0 -iters 10
+
+# Scene 2 - save form factors
+Debug\assignments.exe -tc 6 -scene 2 -e 0,0,-150 -at 0,0,0 -nparts 12 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion -FFfile "c:/smd/temp/FF-scene2_nparts12_ncountour4.csv"
+
+# Scene 2 - pre-computed form factors
+Debug\assignments.exe -tc 6 -scene 2 -e 0,0,-150 -at 0,0,0 -nparts 12 -ncontour 4 -ambient 1 -intensity 1.5 -occlusion -loadFF -FFfile "c:/smd/temp/FF-scene2_nparts12_ncountour4.csv" -solver 0 -iters 10
+
+# Scene 3 - save form factors
+Debug\assignments.exe -tc 6 -scene 3 -e 0,0,-150 -at 0,0,0 -nparts 7 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion -FFfile "c:/smd/temp/FF-scene3_nparts7_ncountour4.csv"
+
+# Scene 3 - load form factors
+Debug\assignments.exe -tc 6 -scene 3 -e 0,0,-150 -at 0,0,0 -nparts 7 -ncontour 4 -ambient 1 -intensity 1.5 -occlusion -loadFF -FFfile "c:/smd/temp/FF-scene3_nparts7_ncountour4.csv" -solver 0 -iters 1
+
+# Scene 4 - save form factors
+Debug\assignments.exe -tc 6 -scene 4 -e 0,0,-150 -at 0,0,0 -nparts 10 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion -FFfile c:/smd/temp/FF-scene4_nparts10_ncontour4.csv
+
+# Scene 4 - load precomputed FF
+Debug\assignments.exe -tc 6 -scene 4 -e 0,0,-150 -at 0,0,0 -nparts 10 -ncontour 4 -ambient 1 -intensity 1.5 -occlusion -loadFF -FFfile c:/smd/temp/FF-scene4_nparts10_ncontour4.csv -smoothcolor -solver 0 -iters 10
+
+# Scene 5 - save form factors
+Debug\assignments.exe -tc 6 -scene 5 -e 0,0,-150 -at 0,0,0 -nparts 10 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion -FFfile c:/smd/temp/FF-scene5_nparts10_ncontour4.csv
+
+# Scene 5 - load precomputed FF
+Debug\assignments.exe -tc 6 -scene 5 -e 0,0,-150 -at 0,0,0 -nparts 10 -ncontour 4 -ambient 1 -intensity 1.5 -occlusion -loadFF -FFfile c:/smd/temp/FF-scene5_nparts10_ncontour4.csv -solver 0 -iters 20
+

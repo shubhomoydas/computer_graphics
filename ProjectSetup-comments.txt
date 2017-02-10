@@ -1,0 +1,15 @@
+To add OpenGL libraries to the project path:
+Just go to project properties -> Configuration properties -> Linker.
+Goto to ->General and set the "Additional Library directories" to point to:
+C:\smd\git\cs551\Opengl\lib
+
+Then goto to Linker -> Input and type in ;GLAUX.LIB;GLU32.LIB;glut32.lib;OPENGL32.LIB 
+in the "Additional Dependencies" field
+
+#Project -> Properties -> Configuration Properties -> 
+#  C/C++ -> Additional Include Directories = C:\smd\git\cs551\Opengl\include
+
+Project -> Properties -> Configuration Properties -> 
+  C/C++ -> Command Line -> Command Line additional options = /D _CRT_SECURE_NO_WARNINGS
+
+Project -> Properties -> Configuration Properties -> Debugging -> Environment = PATH=C:\smd\git\cs551\Opengl\lib;%PATH%
