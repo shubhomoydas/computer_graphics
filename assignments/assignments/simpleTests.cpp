@@ -45,7 +45,7 @@ void main(int argc , char **argv)
 
     int xsize = 400;
     int ysize = 400;
-	const std::string root = "C:/smd/classes/CS551/project3";
+	const std::string root = "obj";
 	std::string filenameFlat = root + "/test.obj";
 	std::string filenameSmooth = root + "/face.ws.obj";
 
@@ -101,7 +101,7 @@ void objTestShadows(CommandOptions& options) {
 	//osuOrtho(-2, 2, -2, 2, 1.0, 1000);
 	osuClear(0, 0, 0);	
 	
-	std::string spherepath = "C:/smd/classes/CS551/project3/sphere.obj";
+	std::string spherepath = "obj/sphere.obj";
 
 	float from[3]={(float)options.e.x, (float)options.e.y, (float)options.e.z};//{2.0,2.0,2.0};
 	float at[3] = {(float)options.at.x, (float)options.at.y, (float)options.at.z};//{0.0,0.0,0.0};
