@@ -1,0 +1,68 @@
+
+cd assignments
+
+Debug\assignments.exe -tc 1 -sm 0
+Debug\assignments.exe -tc 2 -sm 1
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/cube.obj -l -3.0,3.0,3.0
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/cube.obj -l -3.0,3.0,3.0
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/cube.obj -l -3.0,3.0,3.0 -noNormInterp
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/sphere.obj -l -3.0,3.0,3.0
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/sphere.obj -l -3.0,3.0,3.0 -noNormInterp
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/sphere.obj -l -3.0,3.0,3.0 -scale 2
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/sphere.obj -l -3.0,3.0,3.0 -specular 1,1,1,256
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/cone.obj
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/cone.obj
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/cone.obj -noNormInterp
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/jack.obj -e 1.0,0.0,3.0 -diffuse 1.0,0.0,0.0 -scale 1.8
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/jack.obj -e 1.0,0.0,3.0 -diffuse 1.0,0.0,0.0 -scale 1.8
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/jack.obj -e 1.0,0.0,3.0 -diffuse 1.0,0.0,0.0 -scale 1.8
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/newPlane.obj -e 0,8,8 -at 0,0,0 -l 0,4,8 -scale 1.2
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/newPlane.obj -e 0,-8,8 -at 0,0,0 -l 0,-4,8 -scale 1.2
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/newPlane.obj -e 0,8,-10 -at 0,0,0 -l 0,4,-8 -scale 1.2
+
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/newPlane.obj -e 0,8,8 -at 0,0,0 -l 0,4,8 -scale 1.2
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/newPlane.obj -e 0,-8,8 -at 0,0,0 -l 0,-4,8 -scale 1.2
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/newPlane.obj -e 0,8,-10 -at 0,0,0 -l 0,4,-8 -scale 1.2
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/test.obj -e 0,1,-3 -l 0,3,-4 -at 0,0,10 -scale 1.2 -normMul -1.0
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/test.obj -e 0,1,-3 -l 0,3,-4 -at 0,0,10 -scale 1.2 -normMul -1.0
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/test.obj -e 0,1,-3 -l 0,3,-4 -at 0,0,10 -scale 1.2 -normMul -1.0 -noNormInterp
+
+Debug\assignments.exe -tc 3 -sm 0 -file ../obj/face.ws.obj -e 0.5,0.0,1.5 -at 0.0,0.0,0.0 -l 0,3,4 -scale 2.5
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/face.ws.obj -e 0.5,0.0,1.5 -at 0.0,0.0,0.0 -l 0,3,4 -scale 2.5
+Debug\assignments.exe -tc 3 -sm 1 -file ../obj/face.ws.obj -e 0.5,0.0,1.5 -at 0.0,0.0,0.0 -l 0,3,4 -scale 2.5 -noNormInterp
+
+# Shadow Map Tests (Uses shadow map instead of ray tracing)
+# ----------------
+# Test with sphere
+Debug\assignments.exe -tc 4 -sm 1 -file ../obj/sphere.obj -e 0.0,1.0,4.0 -at 0,0,0 -l -4.0,0.0,0.0 -debug -shadows
+Debug\assignments.exe -tc 4 -sm 1 -file ../obj/sphere.obj -e 0.0,1.0,4.0 -at 0,0,0 -l -14.0,0.0,0.0 -debug -shadows -shadowsOnly
+
+# Ray Trace Tests
+# ---------------
+Debug\assignments.exe -tc 5 -e 0,1,3 -at 0.0,0.0,0.0 -l -4.0,0.0,0.0
+
+# Two spheres
+Debug\assignments.exe -tc 5 -e 0,0,3 -at 0,0,0 -l 2,0,4 -reflectionDepth 1 -specular 1,1,1,5 -ambient 0.2 -intensity 0.7
+
+Debug\assignments.exe -tc 5 -e 0,1,3 -at 0.0,0.0,0.0 -l 0.0,0.0,4 -reflectionDepth 1 -specular 1,1,1,5
+
+# Radiosity Tests
+# ---------------
+
+# Render Scenes with patches
+Debug\assignments.exe -tc 6 -e 0,0,-50 -at 0,0,-150 -nparts 4 -ncontour 4 -ambient 1 -scene 2 -patchesOnly
+Debug\assignments.exe -tc 6 -e 0,0,-150 -at 0,0,0 -nparts 4 -ncontour 4 -ambient 1 -scene 2 -patchesOnly
+
+Debug\assignments.exe -tc 6 -e 0,0,-50 -at 0,0,-150 -nparts 5 -ncontour 4 -ambient 1 -scene 1 -patchesOnly
+Debug\assignments.exe -tc 6 -e 0,0,-150 -at 0,0,0 -nparts 5 -ncontour 4 -ambient 1 -scene 1 -patchesOnly
+
+# Scene 1
+# Default view
+Debug\assignments.exe -tc 6 -e 0,0,-50 -at 0,0,-150 -nparts 5 -ncontour 4 -ambient 1 -intensity 1.5 -iters 1 -occlusion
+

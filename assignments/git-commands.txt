@@ -1,3 +1,0 @@
-
-cd C:\smd\git\cs551\assignments
-git archive --format zip --output C:\smd\temp\cs551.zip master
