@@ -3,8 +3,8 @@
 #include "utils.h"
 
 bool CommandOptions::parseCommandLine(int argc, char **argv) {
-	file = "c:/smd/classes/CS551/project3/cube.obj";
-	FFfile = "c:/smd/temp/FF.csv";
+	file = "obj/cube.obj";
+	FFfile = "c:/temp/FF.csv";
 	cr.set(0.0, 0.0, 1.0); // blue
 	specular.set(1.0,1.0,1.0,1.0);
 	e.set(2.0,2.0,2.0); // eye coordinates
