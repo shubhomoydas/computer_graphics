@@ -2,7 +2,9 @@
 
 Graphics courses are always fun!
 
-The code depends on Visual C++ and OpenGL. The OpenGL dependencies are under 'Opengl' folder.
+The code depends on Eclipse and OpenGL for running on MacOS. See ProjectSetup-comments-OSX.txt for linker configuration to support OpenGL.
+
+For Windows, the OpenGL dependencies are under 'Opengl' folder.
 
 Here is a sample assignment: https://github.com/shubhomoydas/computer_graphics/blob/master/results/Radiosity.pdf
 
