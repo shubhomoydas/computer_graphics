@@ -1,0 +1,5 @@
+Setup the project in Eclipse:
+
+To add OpenGL libraries to the project path:
+Project properties -> C/C++ Build -> Settings -> MacOS X C++ Linker -> Linker Flags
+  -framework GLUT -framework OpenGL -framework Cocoa

@@ -471,8 +471,10 @@ namespace smd {
 		return subDivideByNumParts(p1, p2, p3, p4, cntX, cntY, patches, rect);
 	}
 
-	std::vector<smd::Patch*>& subDivideByNumParts(std::list<Shape*>& shapes, int nparts, std::vector<Patch*>& patches) {
-		for (std::list<Shape*>::iterator it = shapes.begin(); it != shapes.end(); it++) {
+	std::vector<smd::Patch*>& subDivideByNumParts(const std::list<Shape*>& shapes, int nparts, std::vector<Patch*>& patches) {
+	    typedef std::list<Shape*>::const_iterator const_shape_iterator;
+	    for (const_shape_iterator it = shapes.begin(); it != shapes.end(); it++) {
+		//for (std::list<Shape*>::iterator it = shapes.begin(); it != shapes.end(); it++) {
 			if ((*it)->getMode() != OSU_POLYGON) {
 				std::cout << "Only rectangular patches supported..." << std::endl;
 				continue;
@@ -487,8 +489,9 @@ namespace smd {
 		return patches;
 	}
 	
-	std::vector<smd::Patch*>& subDivideByNumParts(Polygon& rect, int nparts, std::vector<Patch*>& patches) {
-		std::list<Vertex>::iterator viter = rect.vertices.begin();
+	std::vector<smd::Patch*>& subDivideByNumParts(const Polygon& rect, int nparts, std::vector<Patch*>& patches) {
+	    typedef std::list<Vertex>::const_iterator const_vert_iterator;
+	    const_vert_iterator viter = rect.vertices.begin();
 		Vertex v1 = *viter; viter++;
 		Vertex v2 = *viter; viter++;
 		Vertex v3 = *viter; viter++;

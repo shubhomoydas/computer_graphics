@@ -48,7 +48,7 @@ void radiosityTest(CommandOptions& options) {
 	} else {
 		getGraphicsManager().setRendererType(smd::RADIOSITY);
 		renderScene(options);
-		std::list<smd::Shape*>& shapes = getGraphicsManager().getShapes();
+		const std::list<smd::Shape*>& shapes = getGraphicsManager().getShapes();
 		std::vector<smd::Patch*> patches;
 
 		//smd::subDivideByMaxLength(shapes, 10, patches);

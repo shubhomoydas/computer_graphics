@@ -7,16 +7,20 @@
 #define OSUWINDOW 1
 
 #ifdef OSUWINDOW
-#include <windows.h>		// Header File For Windows
-#include <gl\gl.h>			// Header File For The OpenGL32 Library
-#include <gl\glu.h>			// Header File For The GLu32 Library		
-#include "glut.h"		//glut library
+//#include <windows.h>		// Header File For Windows
+//#include <gl\gl.h>			// Header File For The OpenGL32 Library
+//#include <gl\glu.h>			// Header File For The GLu32 Library
+//#include "glut.h"		//glut library
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
 #endif
 
 
 
 #include <stdio.h>
-#include <malloc.h>
+//#include <malloc.h>
+#include <stdlib.h>
 
 #include "osuGraphics.h"
 

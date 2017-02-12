@@ -1,6 +1,7 @@
 #include "glMatrix.h"
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 #define SWAP(a,b) {temp=(a);(a)=(b);(b)=temp;}
 
@@ -99,8 +100,8 @@ namespace smd {
 				if (ipiv[j] != 0)
 					for (k=0;k<n;k++) {
 						if (ipiv[k] == -1) {
-							if (fabs(a[j][k]) >= big) {
-								big=fabs(a[j][k]);
+							if (std::abs(a[j][k]) >= big) {
+								big=std::abs(a[j][k]);
 								irow=j;
 								icol=k;
 							}

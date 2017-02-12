@@ -21,7 +21,8 @@ void loadAndDrawObj(const char *fname, CommandOptions& options);
 void testTriangle1();
 void rayTest(CommandOptions& options);
 void radiosityTest(CommandOptions& options);
-void main(int argc , char **argv)
+
+int main(int argc , char **argv)
 {
 	CommandOptions options;
 	if (!options.parseCommandLine(argc, argv)) {
@@ -40,7 +41,7 @@ void main(int argc , char **argv)
 		default:
 			break;
 		}
-		return;
+		return 0;
 	}
 
     int xsize = 400;
@@ -93,6 +94,8 @@ void main(int argc , char **argv)
 	osuFlush();
 	osuWaitOnEscape();
 	osuEndGraphics();
+
+	return 0;
 }
 
 void objTestShadows(CommandOptions& options) {

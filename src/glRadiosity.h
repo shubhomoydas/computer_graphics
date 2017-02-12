@@ -306,8 +306,8 @@ namespace smd {
 	std::vector<smd::Patch*>& subDivideByMaxLength(Polygon& rect, double len, std::vector<Patch*>& patches);
 	std::vector<smd::Patch*>& subDivideByMaxLength(const Vertex& p1, const Vertex& p2, const Vertex& p3, const Vertex& p4, 
 		double len, std::vector<Patch*>& patches, const Polygon& rect);
-	std::vector<smd::Patch*>& subDivideByNumParts(std::list<Shape*>& shapes, int nparts, std::vector<Patch*>& patches);
-	std::vector<smd::Patch*>& subDivideByNumParts(Polygon& rect, int nparts, std::vector<Patch*>& patches);
+	std::vector<smd::Patch*>& subDivideByNumParts(const std::list<Shape*>& shapes, int nparts, std::vector<Patch*>& patches);
+	std::vector<smd::Patch*>& subDivideByNumParts(const Polygon& rect, int nparts, std::vector<Patch*>& patches);
 	std::vector<smd::Patch*>& subDivideByNumParts(
 		const Vertex& p1, const Vertex& p2, const Vertex& p3, const Vertex& p4, 
 		const int cntX, const int cntY, std::vector<Patch*>& patches, const Polygon& rect);

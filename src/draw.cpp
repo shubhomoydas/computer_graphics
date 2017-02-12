@@ -9,7 +9,7 @@ Line drawing in 3D.
 #include "osuGraphics.h"
 #include "matlib.h"
 #include "lines.h"
-#include <Windows.h>
+//#include <Windows.h>
 
 int xsize = 360;
 int ysize = 360;

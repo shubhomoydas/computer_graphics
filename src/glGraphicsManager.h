@@ -34,7 +34,9 @@ namespace smd {
 
 	template<class T>
 	std::vector<T>& listToVector(std::list<T>& l, std::vector<T>& v) {
-		for (std::list<T>::iterator it = l.begin(); it != l.end(); it++) {
+	    typedef std::list<T> InputType;
+        typename InputType::iterator it;
+		for (it = l.begin(); it != l.end(); it++) {
 			v.push_back(*it);
 		}
 		return v;

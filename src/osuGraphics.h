@@ -63,8 +63,8 @@ enum OSUDrawable { OSU_NONE, OSU_TRIANGLE, OSU_LINES, OSU_POLYGON, OSU_SPHERE };
 
 void osuColor3f ( double r, double g, double b );
 void osuVertex2f ( double x, double y );
-//void osuBegin ( int /* OSUDrawable */ );
-void osuBegin ( OSUDrawable );
+void osuBegin ( int /* OSUDrawable */ );
+//void osuBegin ( OSUDrawable );
 void osuEnd ();
 
 typedef struct osuVertex {

@@ -11,8 +11,8 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 	at.set(0.0,0.0,0.0); // look at coordinates
 	l.set(3.0,3.0,3.0); // point light coordinates
 	normMul = 1.0;
-	argc = argc;
-	argv = argv;
+	//argc = argc;
+	//argv = argv;
 	bool returnOptions = true;
     for (int i = 1; i < argc; ++i) {
 		std::string arg = argv[i];
@@ -23,7 +23,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				testCase = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -53,7 +53,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 				int tmp = atoi(argv[++i]);
 				if (tmp == OSU_SMOOTH) shadeModel = OSU_SMOOTH;
 			} else {
-				printf("%s option requires one argument (0|1)\n", arg);
+				printf("%s option requires one argument (0|1)\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -61,7 +61,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				scale = atof(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -69,7 +69,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				reflectionDepth = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -77,7 +77,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				iters = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -85,7 +85,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				nparts = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -93,7 +93,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				ncontour = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -101,7 +101,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				scene = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -109,7 +109,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				solver = atoi(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -117,7 +117,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				normMul = atof(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -125,7 +125,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				ambient = (float)atof(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -133,7 +133,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 			if (i + 1 < argc) {
 				intensity = (float)atof(argv[++i]);
 			} else {
-				printf("%s option requires one argument.\n", arg);
+				printf("%s option requires one argument.\n", arg.c_str());
 				returnOptions = false;
 				break;
 			}
@@ -209,7 +209,7 @@ bool CommandOptions::parseCommandLine(int argc, char **argv) {
 				break;
 			}
 		} else {
-			printf("WARN: unrecognized argument '%s' will be ignored.\n",arg);
+			printf("WARN: unrecognized argument '%s' will be ignored.\n",arg.c_str());
 		}
 	}
 	if (!shadows && shadowsOnly) {

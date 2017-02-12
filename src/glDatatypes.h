@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <cmath>
+#include <cfloat>
 #include <limits>
 #include <list>
 #include <map>
@@ -20,7 +21,9 @@ namespace smd {
 	template<typename T>
 	void release_vector_elements(std::vector< T > *v) {
 		if (!v) return;
-		for (std::vector< T >::iterator it = v->begin(); it != v->end(); it++) {
+		typedef std::vector<T> InputType;
+        typename InputType::iterator it;
+		for (it = v->begin(); it != v->end(); it++) {
 			delete *it;
 		}
 	}
